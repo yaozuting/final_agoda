@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="filter-group">
+            <div class="filter">
+                <label for="place-select">Location:</label>
+                <select id="place-select">
+                    <option value="Taipei">Taipei</option>
+                    <option value="Taichung">Taichung</option>
+                    <option value="Tainan">Tainan</option>
+                    <option value="Kaohsiung">Kaohsiung</option>
+                    <option value="Hsinchu">Hsinchu</option>
+                    <option value="Taitung">Taitung</option>
+                    <option value="Yilan">Yilan</option>
+                    <option value="Chiayi">Chiayi</option>
+                    <option value="Keelung">Keelung</option>
+                    <option value="Pingtung">Pingtung</option>
+                </select>
+            </div>
+            <div class="filter">
+                <label for="checkin-date">Check-in date:</label>
+                <input type="date" id="checkin-date" value="">
+            </div>
+            <div class="filter">
+                <label for="checkout-date">Check-out date:</label>
+                <input type="date" id="checkout-date" value="">
+            </div>
+            <div class="filter">
+                <div class="submit_button">
+                    <button type="submit" id="search-button">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Filters</h2>
+            <div class="filter_sidebar">
+                <h3>Price Range:</h3>
+                <div class="price-input-container"> 
+                    <div class="price-input"> 
+                        <div class="price-field"> 
+                            <span>Min</span> 
+                            <input type="number" class="min-input" value="0"> 
+                        </div> 
+                        <div class="price-field"> 
+                            <span>Max</span> 
+                            <input type="number" class="max-input" value="8500"> 
+                        </div> 
+                    </div> 
+                    <div class="slider-container"> 
+                        <div class="price-slider"></div> 
+                    </div> 
+                </div> 
+                <div class="range-input"> 
+                    <input type="range" class="min-range" min="0" max="100000" value="0" step="1"> 
+                    <input type="range" class="max-range" min="0" max="100000" value="8500" step="1"> 
+                </div> 
+            </div>
+            <div class="filter_sidebar">
+                <h3>Facilities</h3>
+                <input type="checkbox" id="wifi" name="facilities" value="Free Wi-Fi">
+                <label for="wifi"> Free Wi-Fi</label><br>
+                <input type="checkbox" id="pets" name="facilities" value="Pets allowed">
+                <label for="pets"> Pets allowed</label><br>
+                <input type="checkbox" id="luggage" name="facilities" value="Luggage storage">
+                <label for="luggage"> Luggage storage</label><br>
+                <input type="checkbox" id="airport" name="facilities" value="Airport transfer">
+                <label for="airport"> Airport transfer</label><br>
+            </div>
+            <div class="filter_sidebar">
+                <h3>Star Rating</h3>
+                <input type="checkbox" id="star-1" name="star-rating" value="1">
+                <label for="star-1"> 1 Star</label><br>
+                <input type="checkbox" id="star-2" name="star-rating" value="2">
+                <label for="star-2"> 2 Stars</label><br>
+                <input type="checkbox" id="star-3" name="star-rating" value="3">
+                <label for="star-3"> 3 Stars</label><br>
+                <input type="checkbox" id="star-4" name="star-rating" value="4">
+                <label for="star-4"> 4 Stars</label><br>
+                <input type="checkbox" id="star-5" name="star-rating" value="5">
+                <label for="star-5"> 5 Stars</label><br>
+            </div>
+            
+        </div>
+        <div class="content">
+            <div id="bubble-chart" style="width:100%;height:600px;"></div>
+            <h1 id="selected-location"></h1>
+            <div id="hotels-list"></div>
+            <div id="hyperlink" style="margin-top: 20px;"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

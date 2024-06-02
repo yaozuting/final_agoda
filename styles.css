@@ -1,0 +1,413 @@
+/* Reset CSS */
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+/* Global styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0; /* Adjust padding to match container */
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.header .filter-group {
+    display: flex;
+    align-items: center;
+    justify-content:end; /* Ensure the elements are spaced evenly */
+    max-width: 1200px;
+    width: 100%;
+    margin: auto; /* Center the filter group */
+    padding-right: 0px; /* Match the container's padding */
+    box-sizing: border-box;
+}
+
+.header .filter {
+    flex-grow: 1;
+    margin-left: 3%;
+
+}
+
+.header label {
+    font-size: 1em;
+    color: #555;
+}
+
+.header select, .header input[type="date"], .header button {
+    width: 100%;
+    max-width: 150px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.header .location select {
+    width: 100%;
+    max-width: 200px; /* Adjust the width for the location filter */
+}
+
+.header .submit_button {
+    text-align: right;
+}
+.header button {
+    padding: 10px 20px;
+    margin-right: 0;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.header button:hover {
+    background-color: #0056b3;
+}
+
+/* Sidebar */
+.sidebar {
+    flex: 3;
+    padding: 20px;
+    background-color: #ffffff;
+    border-right: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.filter_sidebar {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd; /* Light border around filters */
+    border-radius: 5px; /* Rounded corners for filters */
+}
+
+.filter_sidebar h3 {
+  margin-top: 1%;
+  margin-bottom: 2%;;
+}
+
+.filter label, .filter input[type="checkbox"] {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.filter label {
+    margin: 0 10px;
+    font-size: 1em;
+}
+
+.filter input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Content */
+.result-count {
+    font-size: 0.6em; /* Adjust font size as needed */
+    color: #999; /* Adjust font color as needed */
+}
+
+.content {
+    flex: 7;
+    padding: 20px;
+}
+
+.content h1 {
+    margin-top: 4;
+    font-size: 2em;
+}
+
+#hotels-list .hotel-container {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    min-height: min-content; /* Adjust the height dynamically */
+    margin-bottom: 20px;
+    display: flex;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#hotels-list .hotel-container:hover {
+    background-color: #f9f9f9;
+}
+
+.left-column {
+    width: 25%; 
+    margin-right: 2%;
+}
+
+.img-container {
+    width: 100%;
+    height: 100%; /* Change height to 100% */
+    position: relative;
+    overflow: hidden;
+}
+
+.img-container img {
+    width: 98%;
+    height: 100%;
+    border: 2px solid black; /* Add border */
+    border-radius: 10px; /* Adjust border radius */
+    display: block;
+    object-fit: cover;
+}
+
+.middle-column {
+    width: 60%; /* 6 out of 10 */
+}
+
+.right-column {
+    width: 15%;
+    position: relative; /* Add relative positioning */
+    text-align: right; /* Align text to the right */
+    border-left: 1px solid #ddd; /* Light left border for segregation */
+}
+
+.middle-column h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.middle-column p {
+    margin-bottom: 10px;
+}
+
+.right-column p {
+    margin-bottom: 5px; /* Adjust margin as needed */
+    font-size: 0.9em; /* Adjust font size to fit */
+}
+
+.right-column p strong {
+    font-weight: bold;
+}
+
+.price_section {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.price {
+    font-size: 1.4em;
+    color: red;
+}
+
+.facility {
+    border: 1px solid #ccc;
+    padding: 3px 5px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+
+/* Styles for the price input container */
+.price-input-container { 
+    width: 100%; 
+} 
+  
+.price-input .price-field { 
+    display: flex; 
+    margin-bottom: 22px; 
+} 
+  
+.price-field span { 
+    margin-right: 10px; 
+    margin-top: 6px; 
+    font-size: 17px; 
+} 
+  
+.price-field input { 
+    flex: 1; 
+    height: 35px; 
+    font-size: 15px; 
+    font-family: "DM Sans", sans-serif; 
+    border-radius: 9px; 
+    text-align: center; 
+    border: 0px; 
+    background: #e4e4e4; 
+} 
+  
+.price-input { 
+    width: 100%; 
+    font-size: 19px; 
+    color: #555; 
+} 
+  
+/* Remove Arrows/Spinners */
+input::-webkit-outer-spin-button, 
+input::-webkit-inner-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+} 
+  
+.slider-container { 
+    width: 100%; 
+} 
+  
+.slider-container { 
+    height: 6px; 
+    position: relative; 
+    background: #e4e4e4; 
+    border-radius: 5px; 
+} 
+  
+.slider-container .price-slider { 
+    height: 100%; 
+    left: 25%; 
+    right: 15%; 
+    position: absolute; 
+    border-radius: 5px; 
+    background: #01940b; 
+} 
+  
+.range-input { 
+    position: relative; 
+} 
+  
+.range-input input { 
+    position: absolute; 
+    width: 100%; 
+    height: 5px; 
+    background: none; 
+    top: -5px; 
+    pointer-events: none; 
+    cursor: pointer; 
+    -webkit-appearance: none; 
+} 
+  
+/* Styles for the range thumb in WebKit browsers */
+input[type="range"]::-webkit-slider-thumb { 
+    height: 18px; 
+    width: 18px; 
+    border-radius: 70%; 
+    background: #555; 
+    pointer-events: auto; 
+    -webkit-appearance: none; 
+} 
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px; /* Adjust padding for mobile view */
+    }
+
+    .header .filter-group {
+        padding: 0; /* Remove padding in mobile view */
+    }
+
+    .header .filter {
+        margin: 10px 0;
+    }
+
+    .header select, .header input[type="date"], .header button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .sidebar {
+        width: 25%; /* Adjust the width for medium-sized screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .sidebar {
+        width: 30%; /* Adjust the width for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%; /* Take up full width on smaller screens */
+        border-right: none; /* Remove the right border on smaller screens */
+        border-bottom: 1px solid #ddd; /* Add a bottom border for separation */
+    }
+}
+
+/* Additional Styles */
+.header .filter {
+    margin: 0 5px; /* Reduce the margin between filters */
+}
+
+.header .filter select, .header .filter input[type="date"], .header .filter button {
+    height: 38px; /* Set a fixed height for all filters */
+}
+
+.header .location select {
+    width: 100%;
+    max-width: 200px; /* Adjust the width for the location filter */
+}
+
+.header .checkin input[type="date"], .header .checkout input[type="date"] {
+    width: 100%;
+    max-width: 130px; /* Adjust the width for the date filters */
+}
+
+.header .submit button {
+    width: 100%;
+    max-width: 100px; /* Adjust the width for the submit button */
+}
+
+.header .filter-group {
+    flex-wrap: wrap; /* Allow filters to wrap to the next line */
+}
+
+#hotels-list .hotel-container {
+    padding-right: 1%;
+    border: 2px solid #007bff; /* Accent color border */
+    transition: transform 0.3s ease; /* Smooth scale transition */
+}
+
+#hotels-list .hotel-container:hover {
+    transform: scale(1.02); /* Slight scale on hover */
+    background-color: rgb(243, 238, 238);
+}
+
+button, select, input[type="date"] {
+    cursor: pointer;
+}
+
+button:hover, select:hover, input[type="date"]:hover {
+    border-color: #0056b3; /* Darker border on hover */
+}
